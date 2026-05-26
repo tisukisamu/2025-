@@ -1,0 +1,133 @@
+/* 轻量现代简朴主题：尽量不“重写 AntD”，只做质感微调 */
+@import './design-system.css';
+
+:root {
+    --app-bg: var(--gray-50);
+    --app-text: var(--gray-800);
+    --app-muted: var(--gray-500);
+
+    --radius-base: 12px;
+    --radius-sm: 10px;
+
+    --primary: var(--primary-600);
+    --primary-hover: var(--primary-700);
+
+    /* 更克制的 focus ring */
+    --focus-ring: 0 0 0 3px rgba(16, 185, 129, 0.14);
+
+    /* 更轻的阴影 */
+    --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.06);
+    --shadow-card-hover: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+body {
+    background: var(--app-bg);
+    color: var(--app-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== AntD：只改关键质感，不大改结构 ========== */
+
+/* Primary Button */
+:root .ant-btn-primary {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 8px 18px rgba(16, 185, 129, 0.18) !important;
+}
+:root .ant-btn-primary:hover {
+    background: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+}
+
+/* Input / Select 聚焦效果（更现代、克制） */
+:root .ant-input-affix-wrapper-focused,
+:root .ant-input:focus,
+:root .ant-select-focused .ant-select-selector,
+:root .ant-input-number-focused,
+:root .ant-input-number:focus-within,
+:root .ant-picker-focused {
+    border-color: rgba(16, 185, 129, 0.55) !important;
+    box-shadow: var(--focus-ring) !important;
+}
+
+/* 圆角统一（轻量，不改变配色） */
+:root .ant-input,
+:root .ant-input-affix-wrapper,
+:root .ant-select-selector,
+:root .ant-input-number,
+:root .ant-picker,
+:root .ant-btn {
+    border-radius: var(--radius-sm) !important;
+}
+
+/* Card：更像“现代后台”的卡片 */
+:root .ant-card {
+    border-radius: var(--radius-base) !important;
+    box-shadow: var(--shadow-card) !important;
+    border-color: rgba(15, 23, 42, 0.08) !important;
+}
+:root .ant-card:hover {
+    box-shadow: var(--shadow-card-hover) !important;
+}
+
+/* Table：只圆角与轻边框，不改表头颜色 */
+:root .ant-table-container {
+    border-radius: var(--radius-base) !important;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Modal：更柔和 */
+:root .ant-modal-content {
+    border-radius: 16px !important;
+}
+
+/* 滚动条：更细更干净 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.45);
+    border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.65);
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* ========== One CSS：少量通用布局类（可选） ========== */
+.ui-page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 24px;
+}
+@media (max-width: 768px) {
+    .ui-page {
+        padding: 16px;
+    }
+}
+
+.ui-page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+.ui-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gray-900);
+}
+.ui-subtitle {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: var(--app-muted);
+}
