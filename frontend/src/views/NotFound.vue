@@ -1,0 +1,15 @@
+<template>
+  <div class="min-h-60vh flex items-center justify-center">
+    <a-result status="404" title="404" sub-title="抱歉，您访问的页面不存在">
+      <template #extra>
+        <a-button type="primary" class="bg-black border-black text-white" @click="router.push('/')">返回首页</a-button>
+      </template>
+    </a-result>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+</script>
