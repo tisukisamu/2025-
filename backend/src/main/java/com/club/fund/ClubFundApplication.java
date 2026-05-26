@@ -1,0 +1,12 @@
+package com.club.fund;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ClubFundApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ClubFundApplication.class, args);
+    }
+}

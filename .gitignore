@@ -1,0 +1,9 @@
+# 项目排除路径
+/backend/target/
+/frontend/node_modules/
+/frontend/dist/
+/uploads/
+uploads/
+/upload/
+upload/
+*.mp4
